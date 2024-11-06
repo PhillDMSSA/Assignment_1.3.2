@@ -4,35 +4,39 @@
     {
         static void Main(string[] args)
         {
-            do
+
+            Console.WriteLine("Select from the following vehicle models you wish to purchase: \n\t 1) Toyota. \n\t 2) Nissan. \n\t 3) Ford.");
+            int makeChoice = Convert.ToInt32(Console.ReadLine());
+
+            switch (makeChoice)
             {
-                Console.WriteLine("Select from the following vehicle models you wish to purchase: \n\t 1) Toyota. \n\t 2) Nissan. \n\t 3) Ford.");
-                int makeChoice = Convert.ToInt32(Console.ReadLine());
-
-                switch (makeChoice)
-                {
-                    case 1:
-                        Toyota();
-                        break;
-                    case 2:
-                        Nissan();
-                        break;
-                    case 3:
-                        Ford();
-                        break;
-
-                }
-
-                Console.WriteLine("Do you want to select another shape? (Y/N): ");
-                
+                case 1:
+                    Toyota();
+                    break;
+                case 2:
+                    Nissan();
+                    break;
+                case 3:
+                    Ford();
+                    break;
             }
-                while (Console.ReadLine().ToUpper() == "Y");
+            Console.WriteLine();
+            Console.WriteLine();
 
-                Console.WriteLine();
+            Console.WriteLine("Select the option you wish to see: \n\t1. Length of Array \n\t2. Sort of Array ");
+            int answer = Convert.ToInt32(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    LengthArray();
+                    break;
+                case 2:
+                    SortArray();
+                    break;
+            }
 
-                Console.WriteLine("\t\t\t\t\tEnd of code. Thank you!");
+            Console.WriteLine("\t\t\t\t\tEnd of code. Thank you!");
 
-           
             static void Toyota()
             {
                 string[] toyota = { "Tacoma", "Camry", "Tundra" };
@@ -53,7 +57,6 @@
                         break;
 
                 }
-
             }
             static void Nissan()
             {
@@ -74,7 +77,7 @@
                         Console.WriteLine($"You selected the Nissan {nissan[2]}! Nice choice, enjoy!!");
                         break;
 
-                }
+                }  
             }
             static void Ford()
             {
@@ -96,6 +99,21 @@
                         break;
 
                 }
+            }
+            static void LengthArray()
+            {
+                string[] ford = { "Raptor", "Bronco", "Mustang" };
+                Console.WriteLine(ford.Length);
+            }
+            static void SortArray()
+            {
+                string[] ford = { "Raptor", "Bronco", "Mustang" };
+                Array.Sort(ford);
+                foreach (string car in ford)
+                {
+                    Console.WriteLine(car);
+                }
+               
             }
         }
     }
